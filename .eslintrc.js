@@ -4,9 +4,9 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'prettier/react'
+    // 'plugin:react/recommended',
+    'airbnb-base',
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -33,4 +33,11 @@ module.exports = {
     'no-console': 'off',
     'no-plusplus': 'off'
   },
+  settings: {
+    'import/resolver': {
+      'babel-plugin-root-import': {
+        rootPathSuffix: 'src'
+      }
+    }
+  }
 };
