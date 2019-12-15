@@ -7,15 +7,24 @@ const INITIAL_STATE = {
 };
 
 export default function auth(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    case '@auth/SIGN_IN_SUCCESS':
-      return produce(state, draft => {
-        // eslint-disable-next-line no-param-reassign
+  return produce(state, draft => {
+    switch (action.type) {
+      case '@auth/SIGN_IN_REQUEST': {
+        draft.loading = true;
+        break;
+      }
+      case '@auth/SIGN_IN_SUCCESS': {
         draft.token = action.payload.token;
-        // eslint-disable-next-line no-param-reassign
         draft.signed = true;
-      });
-    default:
-      return state;
-  }
+        draft.loading = false;
+        break;
+      }
+      case '@auth/SIGN_FAILURE': {
+        console.tron.log('Failure');
+        draft.loading = false;
+        break;
+      }
+      default:
+    }
+  });
 }

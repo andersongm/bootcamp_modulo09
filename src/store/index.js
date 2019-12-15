@@ -7,7 +7,7 @@ import rootSaga from './modules/rootSaga';
 import createStore from './createStore';
 
 const sagaMonitor =
-  process.env.NODE_ENV === 'development1'
+  process.env.NODE_ENV === 'development'
     ? console.tron.createSagaMonitor()
     : null;
 
