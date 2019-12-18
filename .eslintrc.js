@@ -32,7 +32,8 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off'
   },
   settings: {
     'import/resolver': {
